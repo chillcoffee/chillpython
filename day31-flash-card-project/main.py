@@ -79,4 +79,10 @@ right_button.grid(row=1, column=1)
 
 next_card()
 
+
+
+
+
+
+
 window.mainloop()
