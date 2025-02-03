@@ -48,10 +48,10 @@ def save():
                 #Reading old data
                 data = json.load(data_file)
 
-        except FileNotFoundError:
+        except FileNotFoundError: # if may error
             with open("data.json", "w") as data_file:
                 json.dump(new_data, data_file, indent=4)
-        else:
+        else: # kung walang error
             data.update(new_data)
 
             with open("data.json", "w") as data_file:
@@ -96,16 +96,16 @@ screen_height = window.winfo_screenheight()
 # window.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
 canvas = Canvas(width=200, height=200)
-tomato_img = PhotoImage(file="logo.png")
-canvas.create_image(100, 100, image=tomato_img)
+logo_img = PhotoImage(file="logo.png")
+canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
 #Labels
-label_website = Label(text="Website:")
+label_website = Label(text="Website", width=20, justify="right")
 label_website.grid(row=1, column=0)
-label_username = Label(text="Email/Username:")
+label_username = Label(text="Email/Username:", width=20)
 label_username.grid(row=2, column=0)
-label_pass = Label(text="Password:")
+label_pass = Label(text="Password:", width=20)
 label_pass.grid(row=3, column=0)
 
 #Entries
